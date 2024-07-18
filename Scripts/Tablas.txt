@@ -1,0 +1,23 @@
+-- Empleados.funcionarios definition
+
+CREATE TABLE `funcionarios` (
+  `fun_nid` int NOT NULL AUTO_INCREMENT,
+  `fun_cidentificacion` varchar(30) NOT NULL,
+  `fun_cnombres` varchar(50) NOT NULL,
+  `fun_capellidos` varchar(50) NOT NULL,
+  `fun_cargo` varchar(50) NOT NULL,
+  `fun_dep_nid` int NOT NULL,
+  `fun_fecha_ingreso` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`fun_nid`),
+  UNIQUE KEY `funcionarios_unique` (`fun_cidentificacion`),
+  KEY `funcionarios_dependencias_FK` (`fun_dep_nid`),
+  CONSTRAINT `funcionarios_dependencias_FK` FOREIGN KEY (`fun_dep_nid`) REFERENCES `dependencias` (`dep_nid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Empleados.dependencias definition
+
+CREATE TABLE `dependencias` (
+  `dep_nid` int NOT NULL AUTO_INCREMENT,
+  `dep_nombredependencia` varchar(100) NOT NULL,
+  PRIMARY KEY (`dep_nid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
