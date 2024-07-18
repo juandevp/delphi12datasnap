@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/07/17 17:25:25.053,=D:\Ejercicios\PruebaTecnica\Servidor\FormUnit1.pas</Transaction>
+    <Transaction>2024/07/17 17:25:25.504,=D:\Ejercicios\PruebaTecnica\Servidor\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2024/07/17 17:25:25.691,=D:\Ejercicios\PruebaTecnica\Servidor\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/07/17 17:25:25.955,=D:\Ejercicios\PruebaTecnica\Servidor\js\base64.js</Transaction>
+    <Transaction>2024/07/17 17:25:25.987,=D:\Ejercicios\PruebaTecnica\Servidor\js\serverfunctionexecutor.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.015,=D:\Ejercicios\PruebaTecnica\Servidor\js\json2.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.042,=D:\Ejercicios\PruebaTecnica\Servidor\js\callbackframework.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.079,=D:\Ejercicios\PruebaTecnica\Servidor\js\serverfunctions.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.117,=D:\Ejercicios\PruebaTecnica\Servidor\js\base64-min.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.166,=D:\Ejercicios\PruebaTecnica\Servidor\js\json2-min.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.206,=D:\Ejercicios\PruebaTecnica\Servidor\js\serverfunctionexecutor-min.js</Transaction>
+    <Transaction>2024/07/17 17:25:26.240,=D:\Ejercicios\PruebaTecnica\Servidor\js\callbackframework-min.js</Transaction>
+    <Transaction>2024/07/17 17:25:54.163,D:\Ejercicios\PruebaTecnica\Servidor\FrmTestDefaultServer.dfm=D:\Ejercicios\PruebaTecnica\Servidor\FormUnit1.dfm</Transaction>
+    <Transaction>2024/07/17 17:25:54.163,D:\Ejercicios\PruebaTecnica\Servidor\FrmTestDefaultServer.pas=D:\Ejercicios\PruebaTecnica\Servidor\FormUnit1.pas</Transaction>
+    <Transaction>2024/07/17 17:26:05.399,D:\Ejercicios\PruebaTecnica\Servidor\WebModuleEmpleados.pas=D:\Ejercicios\PruebaTecnica\Servidor\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/07/17 17:26:05.399,D:\Ejercicios\PruebaTecnica\Servidor\WebModuleEmpleados.dfm=D:\Ejercicios\PruebaTecnica\Servidor\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2024/07/17 17:26:10.934,D:\Ejercicios\PruebaTecnica\Servidor\ServerMethodsEmpleados.pas=D:\Ejercicios\PruebaTecnica\Servidor\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2024/07/17 18:57:49.177,=D:\Ejercicios\PruebaTecnica\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 18:58:16.420,D:\Ejercicios\PruebaTecnica\Servidor\UDataBase.pas=D:\Ejercicios\PruebaTecnica\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 19:21:12.259,D:\Ejercicios\PruebaTecnica\Servidor\UDataBase.pas=</Transaction>
+    <Transaction>2024/07/17 19:21:22.252,=D:\Ejercicios\PruebaTecnica\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/07/17 19:21:44.257,D:\Ejercicios\PruebaTecnica\Servidor\UDmEmpleados1.dfm=D:\Ejercicios\PruebaTecnica\Servidor\Unit1.dfm</Transaction>
+    <Transaction>2024/07/17 19:21:44.257,D:\Ejercicios\PruebaTecnica\Servidor\UDmEmpleados1.pas=D:\Ejercicios\PruebaTecnica\Servidor\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
