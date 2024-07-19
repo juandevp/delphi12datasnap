@@ -1,0 +1,85 @@
+unit UDmEmpleados;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  Data.DB, FireDAC.Comp.Client, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet, UEmpleado, System.Generics.Collections, System.JSON,
+  REST.JSON, FireDAC.Stan.StorageJSON;
+
+type
+  TDmEmpleados = class(TDataModule)
+    connDB: TFDConnection;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    qInsertarEmpleados: TFDQuery;
+    qConsultarDependencias: TFDQuery;
+    FDStanStorageJSONLink1: TFDStanStorageJSONLink;
+  private
+    { Private declarations }
+
+  public
+    procedure GuardarEmpleados(AEmpleado: TEmpleado);
+    function ObtenerDependencias: TObjectList<TDependencia>;
+    { Public declarations }
+  end;
+
+var
+  DmEmpleados: TDmEmpleados;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+
+function TDmEmpleados.ObtenerDependencias: TObjectList<TDependencia>;
+var
+  dependencias: TObjectList<TDependencia>;
+begin
+  connDB.Connected := True;
+  dependencias := TObjectList<TDependencia>.Create;
+  try
+    qConsultarDependencias.Open;
+    while not qConsultarDependencias.Eof do
+    begin
+      var
+      dependencia := TDependencia.Create
+        (qConsultarDependencias.FieldByName('dep_nid').AsInteger,
+        qConsultarDependencias.FieldByName('dep_nombredependencia').AsString);
+      dependencia.dep_nid :=;
+      dependencia.dep_nombredependencia :=;
+      dependencias.Add(dependencia);
+      qConsultarDependencias.Next;
+    end;
+    Result := dependencias;
+  finally
+    qConsultarDependencias.Close;
+    connDB.Connected := False;
+  end;
+end;
+
+procedure TDmEmpleados.GuardarEmpleados(AEmpleado: TEmpleado);
+begin
+  connDB.Connected := True;
+  try
+    qInsertarEmpleados.ParamByName('fun_cidentificacion').AsString :=
+      AEmpleado.fun_cidentificacion;
+    qInsertarEmpleados.ParamByName('fun_cnombres').AsString :=
+      AEmpleado.fun_cnombres;
+    qInsertarEmpleados.ParamByName('fun_capellidos').AsString :=
+      AEmpleado.fun_capellidos;
+    qInsertarEmpleados.ParamByName('fun_cargo').AsString := AEmpleado.fun_cargo;
+    qInsertarEmpleados.ParamByName('fun_dep_nid').AsInteger :=
+      AEmpleado.fun_dep_nid;
+    qInsertarEmpleados.ParamByName('fun_fecha_ingreso').AsDate :=
+      StrToDate(AEmpleado.fun_fecha_ingreso);
+    qInsertarEmpleados.ExecSQL;
+  finally
+    connDB.Connected := False;
+  end;
+end;
+
+end.

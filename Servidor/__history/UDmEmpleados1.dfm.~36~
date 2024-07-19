@@ -1,0 +1,19 @@
+object DmEmpleados: TDmEmpleados
+  Height = 242
+  Width = 304
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=sakila'
+      'User_Name=root'
+      'Password=prueba'
+      'DriverID=mySQL')
+    Left = 104
+    Top = 56
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorHome = 'C:\Users\juanc\Downloads\libmysql\'
+    VendorLib = 'LIBMYSQL.DLL'
+    Left = 120
+    Top = 168
+  end
+end

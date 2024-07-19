@@ -8,7 +8,8 @@ uses
   FrmTestDefaultServer in 'FrmTestDefaultServer.pas' {Form1},
   ServerMethodsEmpleados in 'ServerMethodsEmpleados.pas',
   WebModuleEmpleados in 'WebModuleEmpleados.pas' {WebModule1: TWebModule},
-  UDmEmpleados1 in 'UDmEmpleados1.pas' {DmEmpleados: TDataModule};
+  UDmEmpleados in 'UDmEmpleados.pas' {DmEmpleados: TDataModule},
+  UEmpleado in 'UEmpleado.pas';
 
 {$R *.res}
 
