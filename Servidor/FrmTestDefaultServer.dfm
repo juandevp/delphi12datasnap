@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmTesteadorServidor: TfrmTesteadorServidor
   Left = 271
   Top = 114
-  Caption = 'Form1'
+  Caption = 'frmTesteadorServidor'
   ClientHeight = 235
   ClientWidth = 399
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 13
   object Label1: TLabel
     Left = 24

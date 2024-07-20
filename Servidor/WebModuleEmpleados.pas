@@ -51,7 +51,7 @@ end;
 procedure TWebModule1.DSServerClass1GetClass(DSServerClass: TDSServerClass;
   var PersistentClass: TPersistentClass);
 begin
-  PersistentClass := ServerMethodsEmpleados.TServerMethods1;
+  PersistentClass := ServerMethodsEmpleados.TServerMethodsEmpleados;
 end;
 
 procedure TWebModule1.WebFileDispatcher1BeforeDispatch(Sender: TObject;

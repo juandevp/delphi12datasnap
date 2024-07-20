@@ -8,7 +8,7 @@ uses
   Vcl.AppEvnts, Vcl.StdCtrls, IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;
 
 type
-  TForm1 = class(TForm)
+  TfrmTesteadorServidor = class(TForm)
     ButtonStart: TButton;
     ButtonStop: TButton;
     EditPort: TEdit;
@@ -20,6 +20,7 @@ type
     procedure ButtonStartClick(Sender: TObject);
     procedure ButtonStopClick(Sender: TObject);
     procedure ButtonOpenBrowserClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     FServer: TIdHTTPWebBrokerBridge;
     procedure StartServer;
@@ -29,7 +30,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmTesteadorServidor: TfrmTesteadorServidor;
 
 implementation
 
@@ -37,19 +38,20 @@ implementation
 
 uses
 {$IFDEF MSWINDOWS}
-  WinApi.Windows, Winapi.ShellApi,
+  Winapi.Windows, Winapi.ShellApi,
 {$ENDIF}
   Datasnap.DSSession,
   System.Generics.Collections;
 
-procedure TForm1.ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
+procedure TfrmTesteadorServidor.ApplicationEvents1Idle(Sender: TObject;
+  var Done: Boolean);
 begin
   ButtonStart.Enabled := not FServer.Active;
   ButtonStop.Enabled := FServer.Active;
   EditPort.Enabled := not FServer.Active;
 end;
 
-procedure TForm1.ButtonOpenBrowserClick(Sender: TObject);
+procedure TfrmTesteadorServidor.ButtonOpenBrowserClick(Sender: TObject);
 {$IFDEF MSWINDOWS}
 var
   LURL: string;
@@ -58,13 +60,11 @@ begin
   StartServer;
 {$IFDEF MSWINDOWS}
   LURL := Format('http://localhost:%s', [EditPort.Text]);
-  ShellExecute(0,
-        nil,
-        PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
+  ShellExecute(0, nil, PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
 {$ENDIF}
 end;
 
-procedure TForm1.ButtonStartClick(Sender: TObject);
+procedure TfrmTesteadorServidor.ButtonStartClick(Sender: TObject);
 begin
   StartServer;
 end;
@@ -75,19 +75,24 @@ begin
     TDSSessionManager.Instance.TerminateAllSessions;
 end;
 
-procedure TForm1.ButtonStopClick(Sender: TObject);
+procedure TfrmTesteadorServidor.ButtonStopClick(Sender: TObject);
 begin
   TerminateThreads;
   FServer.Active := False;
   FServer.Bindings.Clear;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmTesteadorServidor.FormCreate(Sender: TObject);
 begin
   FServer := TIdHTTPWebBrokerBridge.Create(Self);
 end;
 
-procedure TForm1.StartServer;
+procedure TfrmTesteadorServidor.FormShow(Sender: TObject);
+begin
+  ButtonStart.Click;
+end;
+
+procedure TfrmTesteadorServidor.StartServer;
 begin
   if not FServer.Active then
   begin

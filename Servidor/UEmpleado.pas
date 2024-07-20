@@ -4,6 +4,7 @@ interface
 
 type
   TEmpleado = class
+    fun_nid: Integer;
     fun_cidentificacion: string;
     fun_cnombres: string;
     fun_capellidos: string;
@@ -18,6 +19,11 @@ type
     dep_nid: Integer;
     dep_nombredependencia: string;
     constructor Create(AId: Integer; ANombre: String);
+  end;
+
+type
+  TEmpleadosDependencia = class(TEmpleado)
+    dep_nombredependencia: string;
   end;
 
 implementation

@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions/>
+  <Transactions>
+    <Transaction>2024/07/18 15:09:02.317,D:\Ejercicios\PruebaTecnica\Servidor\ProjectGroup1.groupproj=C:\Users\juanc\OneDrive\Documentos\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
+  </Transactions>
   <Default.Personality>
-    <Projects ActiveProject="D:\Ejercicios\PruebaTecnica\Cliente\Cliente.dproj"/>
+    <Projects ActiveProject="D:\Ejercicios\PruebaTecnica\Servidor\Servidor.dproj"/>
   </Default.Personality>
 </BorlandProject>

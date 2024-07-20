@@ -3,13 +3,13 @@ program Cliente;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  UFrmPrincipal in 'UFrmPrincipal.pas' {Form2},
+  UFrmPrincipal in 'UFrmPrincipal.pas' {frmPrincipal},
   UEmpleado in '..\Servidor\UEmpleado.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
 end.

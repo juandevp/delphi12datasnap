@@ -1,3 +1,4 @@
+CREATE DATABASE recursoshumanos;
 -- Empleados.dependencias definition
 
 CREATE TABLE `dependencias` (
