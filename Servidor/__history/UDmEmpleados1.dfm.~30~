@@ -1,8 +1,0 @@
-object DmEmpleados: TDmEmpleados
-  Height = 242
-  Width = 304
-  object FDConnection1: TFDConnection
-    Left = 104
-    Top = 56
-  end
-end
